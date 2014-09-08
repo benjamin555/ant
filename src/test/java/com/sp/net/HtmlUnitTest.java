@@ -93,7 +93,7 @@ public class HtmlUnitTest {
 		for (Case case1 : c) {
 			formValueMap.put("data", case1);
 			form.setFormValueMap(formValueMap );
-			form.perform("redmineImportExcel");
+			form.perform("importExcel");
 		}
 		
 		
@@ -107,7 +107,7 @@ public class HtmlUnitTest {
 	}
 
 	protected List<Case> getImportBeans() throws FileNotFoundException, Exception {
-		File dataExcel = new File("e:\\temp\\case.xls");
+		File dataExcel = new File("G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\Book1.xlsx");
 		InputStream inputXLS = new FileInputStream(dataExcel);
 		InputStream inputXML = getClass().getResourceAsStream("/excelXMLConfig/excelMappingCase.xml");
 		Map beans = new HashMap();

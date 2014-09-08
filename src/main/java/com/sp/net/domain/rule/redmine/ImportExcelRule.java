@@ -1,8 +1,13 @@
 package com.sp.net.domain.rule.redmine;
 
+import java.lang.reflect.Field;
+
+import org.apache.commons.lang3.StringUtils;
+
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.sp.net.annotation.HtmlElement;
 import com.sp.net.domain.Form;
 import com.sp.net.domain.Rule;
 
@@ -21,14 +26,27 @@ public class ImportExcelRule extends Rule{
 		
 		HtmlForm f = currentPage.getElementById("issue-form", false);
 		
+		Field[] fs = case1.getClass().getDeclaredFields();
+		for (Field field : fs) {
+			
+			HtmlElement  tElement = field.getAnnotation(HtmlElement.class);
+			String xpath = tElement.xpath();
+			getLogger().info("xpath:{}",xpath);
+			
+			Object  el= f.getByXPath(xpath).get(0);
+			getLogger().info("el:{}",el);
+			if (el instanceof com.gargoylesoftware.htmlunit.html.HtmlElement) {
+				com.gargoylesoftware.htmlunit.html.HtmlElement htmlElement = (com.gargoylesoftware.htmlunit.html.HtmlElement)el;
+				field.setAccessible(true);
+				String value = (String) field.get(case1);
+				if (StringUtils.isNoneBlank(value)) {
+					getLogger().info("value:{}",value);
+					htmlElement.setAttribute("value", value);
+				}
+				
+			}
+		}
 		
-		f.getSelectByName("issue[tracker_id]").setSelectedAttribute("5", true);
-		f.getInputByName("issue[subject]").setValueAttribute("testImprot");
-		f.getInputByName("issue[custom_field_values][1]").setValueAttribute(case1.getNo());
-		String date = case1.getDate();
-		f.getInputByName("issue[custom_field_values][2]").setValueAttribute(date);
-		f.getInputByName("issue[custom_field_values][3]").setValueAttribute(case1.getApplier());
-		f.getSelectByName("issue[custom_field_values][4]").setSelectedAttribute(case1.getCaseType(), true);
 
 		
 	}
@@ -39,7 +57,8 @@ public class ImportExcelRule extends Rule{
 		HtmlPage currentPage = form.getSite().getCurrentPage();
 		HtmlForm f = currentPage.getElementById("issue-form", false);
 		HtmlInput b = f.getFirstByXPath("//input[@name='commit']");
-		b.click();
+		HtmlPage main = (HtmlPage) b.click();
+		getLogger().info(main.asText());
 	}
 
 }
