@@ -7,6 +7,8 @@ import org.apache.commons.lang3.StringUtils;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlInput;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.HtmlSelect;
+import com.gargoylesoftware.htmlunit.html.HtmlTextArea;
 import com.sp.net.annotation.HtmlElement;
 import com.sp.net.domain.Form;
 import com.sp.net.domain.Rule;
@@ -22,7 +24,7 @@ public class ImportExcelRule extends Rule{
 	protected void fillData(Form form) throws Exception {
 		getLogger().info("fillData:{}",form);
 		HtmlPage currentPage = form.getSite().getCurrentPage();
-		Case case1 = (Case) form.getFormValueMap().get("data");
+		Object case1 =  form.getFormValueMap().get("data");
 		
 		HtmlForm f = currentPage.getElementById("issue-form", false);
 		
@@ -39,9 +41,24 @@ public class ImportExcelRule extends Rule{
 				com.gargoylesoftware.htmlunit.html.HtmlElement htmlElement = (com.gargoylesoftware.htmlunit.html.HtmlElement)el;
 				field.setAccessible(true);
 				String value = (String) field.get(case1);
+			
+				
+				
+				
 				if (StringUtils.isNoneBlank(value)) {
 					getLogger().info("value:{}",value);
-					htmlElement.setAttribute("value", value);
+					if (htmlElement instanceof HtmlSelect) {
+						HtmlSelect s = (HtmlSelect)htmlElement;
+						s.setSelectedAttribute(value, true);
+					}if(htmlElement instanceof HtmlTextArea){
+						HtmlTextArea t= (HtmlTextArea)htmlElement;
+						t.setText(value);
+					}
+					else {
+						htmlElement.setAttribute("value", value);
+					}
+					
+					
 				}
 				
 			}

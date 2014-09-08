@@ -20,7 +20,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.sp.net.domain.Form;
 import com.sp.net.domain.Site;
-import com.sp.net.domain.rule.redmine.Case;
 import com.sp.net.utils.JxlsUtils;
 
 /**
@@ -87,10 +86,12 @@ public class HtmlUnitTest {
 	public void testRedmineImport() throws Exception {
 		
 		redmineSite.login("admin", "admin321");
-		Form  form = redmineSite.findForm("newTask");
+		Form  form = redmineSite.findForm("newTempTask");
 		Map<String, Object> formValueMap = new HashMap<String, Object>();
-		List<Case> c = getImportBeans();
-		for (Case case1 : c) {
+		String pathname = "G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\潜在客户.xlsx";
+		String mapFile = "/excelXMLConfig/excelMappingTempCustomer.xml";
+		List<Object> c = getImportBeans(pathname,mapFile);
+		for (Object case1 : c) {
 			formValueMap.put("data", case1);
 			form.setFormValueMap(formValueMap );
 			form.perform("importExcel");
@@ -101,17 +102,19 @@ public class HtmlUnitTest {
 	
 	@Test
 	public void testCaseImport() throws Exception {
-		
-		List<Case> c = getImportBeans();
+		String pathname = "G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\潜在客户.xlsx";
+		String mapFile = "/excelXMLConfig/excelMappingTempCustomer.xml";
+		List<Object> c = getImportBeans(pathname,mapFile);
 		logger.info("beans:{}",c);
 	}
 
-	protected List<Case> getImportBeans() throws FileNotFoundException, Exception {
-		File dataExcel = new File("G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\Book1.xlsx");
+	protected List<Object> getImportBeans(String pathname,String mapFile) throws FileNotFoundException, Exception {
+		
+		File dataExcel = new File(pathname);
 		InputStream inputXLS = new FileInputStream(dataExcel);
-		InputStream inputXML = getClass().getResourceAsStream("/excelXMLConfig/excelMappingCase.xml");
+		InputStream inputXML = getClass().getResourceAsStream(mapFile);
 		Map beans = new HashMap();
-		List<Case> c = new ArrayList<Case>();
+		List<Object> c = new ArrayList<Object>();
 		beans.put("result01", c);
 		JxlsUtils.readXLS(inputXLS, inputXML, beans);
 		return c;

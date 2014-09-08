@@ -193,7 +193,22 @@
 						<list>
 							<bean class="com.sp.net.domain.rule.redmine.ImportExcelRule">
 								<property name="key" value="importExcel"></property>
-								<property name="name" value="批导"></property>
+								<property name="name" value="京远批导"></property>
+							</bean>
+						</list>
+					</property>
+				</bean>
+				
+				<bean class="com.sp.net.domain.Form">
+					<property name="site" ref="redmineSite"></property>
+					<property name="key" value="newTempTask"></property>
+					<property name="url"
+						value="http://localhost/redmine/projects/business/issues/new"></property>
+					<property name="rules">
+						<list>
+							<bean class="com.sp.net.domain.rule.redmine.ImportExcelRule">
+								<property name="key" value="importExcel"></property>
+								<property name="name" value="潜在客户批导"></property>
 							</bean>
 						</list>
 					</property>
