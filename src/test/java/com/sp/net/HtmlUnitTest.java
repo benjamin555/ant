@@ -31,6 +31,11 @@ import com.sp.net.utils.JxlsUtils;
 @SuppressWarnings({"rawtypes","unchecked"})
 public class HtmlUnitTest {
 	
+	private static final String G_NEW_PRO_ANT_WEB_SRC_MAIN_WEBAPP_XLS_TEMP_XLSX = "G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\潜在客户.xlsx";
+	private static final String EXCEL_XML_CONFIG_EXCEL_MAPPING_TEMP_CUSTOMER_XML = "/excelXMLConfig/excelMappingTempCustomer.xml";
+	private static final String EXCEL_XML_CONFIG_EXCEL_MAPPING_CASE_XML = "/excelXMLConfig/excelMappingCase.xml";
+	private static final String G_NEW_PRO_ANT_WEB_SRC_MAIN_WEBAPP_XLS_CASE_XLSX = "G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\case.xlsx";
+	private static final String NEW_TASK = "newTask";
 	private Logger logger = LoggerFactory.getLogger(HtmlUnitTest.class);
 	@Autowired
 	private Site inteSite;
@@ -88,8 +93,8 @@ public class HtmlUnitTest {
 		redmineSite.login("admin", "admin321");
 		Form  form = redmineSite.findForm("newTempTask");
 		Map<String, Object> formValueMap = new HashMap<String, Object>();
-		String pathname = "G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\潜在客户.xlsx";
-		String mapFile = "/excelXMLConfig/excelMappingTempCustomer.xml";
+		String pathname = G_NEW_PRO_ANT_WEB_SRC_MAIN_WEBAPP_XLS_TEMP_XLSX;
+		String mapFile = EXCEL_XML_CONFIG_EXCEL_MAPPING_TEMP_CUSTOMER_XML;
 		List<Object> c = getImportBeans(pathname,mapFile);
 		for (Object case1 : c) {
 			formValueMap.put("data", case1);
@@ -102,8 +107,8 @@ public class HtmlUnitTest {
 	
 	@Test
 	public void testCaseImport() throws Exception {
-		String pathname = "G:\\newPro\\ant-web\\src\\main\\webapp\\xls\\潜在客户.xlsx";
-		String mapFile = "/excelXMLConfig/excelMappingTempCustomer.xml";
+		String pathname = G_NEW_PRO_ANT_WEB_SRC_MAIN_WEBAPP_XLS_TEMP_XLSX;
+		String mapFile = EXCEL_XML_CONFIG_EXCEL_MAPPING_TEMP_CUSTOMER_XML;
 		List<Object> c = getImportBeans(pathname,mapFile);
 		logger.info("beans:{}",c);
 	}

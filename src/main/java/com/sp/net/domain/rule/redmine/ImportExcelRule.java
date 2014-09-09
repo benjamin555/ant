@@ -3,6 +3,7 @@ package com.sp.net.domain.rule.redmine;
 import java.lang.reflect.Field;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.Assert;
 
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlInput;
@@ -76,6 +77,8 @@ public class ImportExcelRule extends Rule{
 		HtmlInput b = f.getFirstByXPath("//input[@name='commit']");
 		HtmlPage main = (HtmlPage) b.click();
 		getLogger().info(main.asText());
+		Assert.isTrue(main.asText().contains("在 一分钟内 之前添加"));
+		
 	}
 
 }
