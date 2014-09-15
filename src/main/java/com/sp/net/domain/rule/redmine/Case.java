@@ -94,7 +94,11 @@ public class Case {
 	private String caseStatue;
 	@HtmlElement(xpath="//input[@id='issue_custom_field_values_33']")
 	private String traceDate;
-	
+	/**
+	 * 是否经常联系
+	 */
+	@HtmlElement(xpath="//input[@id='issue_custom_field_values_35']")
+	private String contactFrequent;
 	
 
 	public String getNo() {
@@ -385,6 +389,14 @@ public class Case {
 				+ ", annualDay=" + annualDay + ", certifHasSend=" + certifHasSend + ", certifSendRemark="
 				+ certifSendRemark + ", isSaleable=" + isSaleable + ", caseStatue=" + caseStatue + ", traceDate="
 				+ traceDate + "]";
+	}
+
+	public String getContactFrequent() {
+		return contactFrequent;
+	}
+
+	public void setContactFrequent(String contactFrequent) {
+		this.contactFrequent = contactFrequent;
 	}
 
 	
