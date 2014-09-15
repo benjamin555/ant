@@ -68,7 +68,7 @@ public class Case {
 	/**
 	 * 是否经常联系
 	 */
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_35']")
+	@HtmlElement(xpath="//input[@id='issue_custom_field_values_36']")
 	private String contactFrequent;
 	
 	@HtmlElement(xpath="//*[@id='issue_custom_field_values_14']")
