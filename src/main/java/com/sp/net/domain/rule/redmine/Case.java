@@ -65,11 +65,11 @@ public class Case {
 	@HtmlElement(xpath="//*[@id='issue_custom_field_values_13']")
 	private String customerType;
 	
-	/**
-	 * 是否经常联系
-	 */
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_36']")
-	private String contactFrequent;
+//	/**
+//	 * 是否经常联系
+//	 */
+//	@HtmlElement(xpath="//*[@id='issue_custom_field_values_36']")
+//	private String contactFrequent;
 	
 	@HtmlElement(xpath="//*[@id='issue_custom_field_values_14']")
 	private String contactMan;
@@ -89,7 +89,7 @@ public class Case {
 	private String rejectArrivalDate;
 	@HtmlElement(xpath="//input[@id='issue_custom_field_values_25']")
 	private String certificateArrivalDate;
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_26']")
+	@HtmlElement(xpath="//*[@id='issue_custom_field_values_35']")
 	private String annualDay;
 	@HtmlElement(xpath="//*[@id='issue_custom_field_values_29']")
 	private String  certifHasSend;
@@ -394,13 +394,13 @@ public class Case {
 				+ traceDate + "]";
 	}
 
-	public String getContactFrequent() {
-		return contactFrequent;
-	}
-
-	public void setContactFrequent(String contactFrequent) {
-		this.contactFrequent = contactFrequent;
-	}
+//	public String getContactFrequent() {
+//		return contactFrequent;
+//	}
+//
+//	public void setContactFrequent(String contactFrequent) {
+//		this.contactFrequent = contactFrequent;
+//	}
 
 	
 	
