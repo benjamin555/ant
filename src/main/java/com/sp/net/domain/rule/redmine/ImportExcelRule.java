@@ -33,6 +33,9 @@ public class ImportExcelRule extends Rule{
 		for (Field field : fs) {
 			
 			HtmlElement  tElement = field.getAnnotation(HtmlElement.class);
+			if(tElement==null){
+				continue;
+			}
 			String xpath = tElement.xpath();
 			getLogger().info("xpath:{}",xpath);
 			

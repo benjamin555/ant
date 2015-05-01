@@ -17,149 +17,8 @@
 		<property name="proxyPort" value="8080"></property>
 	</bean>
 
-	<bean id="inteSite" class="com.sp.net.domain.Site" scope="singleton">
-		<property name="url" value="http://10.63.2.111:8090/integration"></property>
-		<property name="webClient" ref="webClient"></property>
-		<property name="loginForm">
-			<bean class="com.sp.net.domain.LoginForm">
-				<property name="site" ref="inteSite"></property>
-				<property name="key" value="login"></property>
-				<property name="url" value="http://10.63.2.111:8090/integration"></property>
-				<property name="formUrl" value="/inte/login.action"></property>
-				<property name="rules">
-					<list>
-						<bean class="com.sp.net.domain.rule.inte.LoginRule">
-							<property name="key" value="lr"></property>
-							<property name="name" value="登录"></property>
-						</bean>
-					</list>
-				</property>
-			</bean>
-		</property>
-		<property name="forms">
-			<list>
-				<bean class="com.sp.net.domain.Form">
-					<property name="site" ref="inteSite"></property>
-					<property name="key" value="applyList"></property>
-					<property name="url"
-						value="http://10.63.2.111:8090/integration/pr/central/requisition/list.do"></property>
-					<property name="rules">
-						<list>
-							<bean class="com.sp.net.domain.rule.inte.SingleInputRule">
-								<property name="key" value="sir"></property>
-								<property name="name" value="直接输入单号"></property>
-							</bean>
-							<bean class="com.sp.net.domain.rule.inte.SuffixInputRule">
-								<property name="key" value="suir"></property>
-								<property name="name" value="输入尾号"></property>
-							</bean>
-						</list>
-					</property>
-				</bean>
-				
-				
-				<bean class="com.sp.net.domain.Form" init-method="init">
-					<property name="site" ref="inteSite"></property>
-					<property name="key" value="caogaoList"></property>
-					<property name="url"
-						value="http://10.63.2.111:8090/integration/prwprapplyquery_page_init.cmd?applystate=5"></property>
-					<property name="rules">
-						<list>
-							<bean class="com.sp.net.domain.rule.inte.LoopDelApplyRule">
-								<property name="async" value="true"></property>
-								<property name="key" value="ldar"></property>
-								<property name="loop" value="false"></property>
-								<property name="interval" value="5"></property>
-								<property name="name" value="循环删除采办申请"></property>
-							</bean>
-							
-							
-							<bean class="com.sp.net.domain.rule.inte.RefreshApplyRule">
-								<property name="async" value="true"></property>
-								<property name="key" value="rar"></property>
-								<property name="loop" value="true"></property>
-								<property name="interval" value="5"></property>
-								<property name="name" value="循环刷新采办申请"></property>
-							</bean>
-						</list>
-					</property>
-				</bean>
-				
-				
-				<bean class="com.sp.net.domain.Form" init-method="init">
-					<property name="site" ref="inteSite"></property>
-					<property name="key" value="tacticList"></property>
-					<property name="url"
-						value="http://10.63.2.111:8090/integration/prwapprovetacticquery_page_init.cmd?processtype=2"></property>
-					<property name="rules">
-						<list>
-							<bean class="com.sp.net.domain.rule.inte.RefreshTacticRule">
-								<property name="async" value="true"></property>
-								<property name="key" value="rtr"></property>
-								<property name="loop" value="true"></property>
-								<property name="interval" value="3"></property>
-								<property name="name" value="循环刷新路径"></property>
-							</bean>
-						</list>
-					</property>
-				</bean>
-				
-				
-				
-				
-				
-			</list>
-		</property>
-	</bean>
 
 
-
-
-	<bean id="qunarSite" class="com.sp.net.domain.Site" scope="singleton">
-		<property name="url" value="http://user.qunar.com/passport/login.jsp"></property>
-		<property name="webClient" ref="webClient"></property>
-		<property name="loginForm">
-			<bean class="com.sp.net.domain.LoginForm">
-				<property name="site" ref="qunarSite"></property>
-				<property name="vcodeImgId" value="vcodeImg" ></property>
-				<property name="url" value="http://user.qunar.com/passport/login.jsp"></property>
-				<property name="formUrl" value="/qunar/login.action"></property>
-				<property name="rules">
-					<list>
-						<bean class="com.sp.net.domain.rule.qunar.LoginRule">
-							<property name="key" value="qunarSiteLr"></property>
-							<property name="name" value="登录"></property>
-						</bean>
-					</list>
-				</property>
-			</bean>
-		</property>
-	</bean>
-	
-	
-	<bean id="doubanSite" class="com.sp.net.domain.Site" scope="singleton">
-		<property name="url" value="http://www.douban.com/accounts/login"></property>
-		<property name="webClient" ref="proxyClient"></property>
-		<property name="loginForm">
-			<bean class="com.sp.net.domain.LoginForm">
-				<property name="site" ref="doubanSite"></property>
-				<property name="vcodeImgId" value="captcha_image" ></property>
-				<property name="url" value="http://www.douban.com/accounts/login"></property>
-				<property name="formUrl" value="/douban/login.action"></property>
-				<property name="rules">
-					<list>
-						<bean class="com.sp.net.domain.rule.douban.LoginRule">
-							<property name="key" value="doubanSiteLr"></property>
-							<property name="name" value="登录"></property>
-						</bean>
-					</list>
-				</property>
-			</bean>
-		</property>
-	</bean>
-	
-	
-	
 	
 	<!--redmine import  -->
 	
@@ -188,31 +47,17 @@
 					<property name="site" ref="redmineSite"></property>
 					<property name="key" value="newTask"></property>
 					<property name="url"
-						value="http://localhost/redmine/projects/test/issues/new"></property>
+						value="http://localhost/redmine/projects/record/issues/new"></property>
 					<property name="rules">
 						<list>
 							<bean class="com.sp.net.domain.rule.redmine.ImportExcelRule">
 								<property name="key" value="importExcel"></property>
-								<property name="name" value="京远批导"></property>
+								<property name="name" value="批导"></property>
 							</bean>
 						</list>
 					</property>
 				</bean>
 				
-				<bean class="com.sp.net.domain.Form">
-					<property name="site" ref="redmineSite"></property>
-					<property name="key" value="newTempTask"></property>
-					<property name="url"
-						value="http://localhost/redmine/projects/business/issues/new"></property>
-					<property name="rules">
-						<list>
-							<bean class="com.sp.net.domain.rule.redmine.ImportExcelRule">
-								<property name="key" value="importExcel"></property>
-								<property name="name" value="潜在客户批导"></property>
-							</bean>
-						</list>
-					</property>
-				</bean>
 				
 			</list>
 		</property>
