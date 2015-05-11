@@ -23,7 +23,7 @@ public class Contract {
 	private String productName;	
 	
 	@HtmlElement(xpath="//*[@id='issue_custom_field_values_6']")
-	private Integer cnt;
+	private String cnt;
 	
 	@HtmlElement(xpath="//*[@id='issue_custom_field_values_33']")
 	private String salesManager;
@@ -89,11 +89,12 @@ public class Contract {
 		this.no = no;
 	}
 
-	public Integer getCnt() {
+
+	public String getCnt() {
 		return cnt;
 	}
 
-	public void setCnt(Integer cnt) {
+	public void setCnt(String cnt) {
 		this.cnt = cnt;
 	}
 
