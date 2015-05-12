@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>新建问题 - 1. 客户信息记录 - Redmine</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="tNKTReXKwmSwIuO2/pPmusFIaAGddOSZ2NmQF6gowV4=" name="csrf-token" />
+<link rel='shortcut icon' href='/redmine/favicon.ico?1404650654' />
+<link href="/redmine/stylesheets/jquery/jquery-ui-1.9.2.css?1404650654" media="all" rel="stylesheet" type="text/css" />
+<link href="/redmine/stylesheets/application.css?1404650654" media="all" rel="stylesheet" type="text/css" />
+
+<script src="/redmine/javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js?1404650654" type="text/javascript"></script>
+<script src="/redmine/javascripts/application.js?1404650654" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('若离开当前页面，则该页面内未保存的内容将丢失。'); });
+//]]>
+</script>
+
+
+<!-- page specific tags -->
+<script src="/redmine/javascripts/jstoolbar/jstoolbar-textile.min.js?1404650654" type="text/javascript"></script><script src="/redmine/javascripts/jstoolbar/lang/jstoolbar-zh.js?1404650654" type="text/javascript"></script><link href="/redmine/stylesheets/jstoolbar.css?1404650654" media="screen" rel="stylesheet" type="text/css" /><script src="/redmine/javascripts/datepicker.js?1404650654" type="text/javascript"></script><script type="text/javascript">
+//<![CDATA[
+var datepickerOptions={dateFormat: 'yy-mm-dd', firstDay: 0, showOn: 'button', buttonImageOnly: true, buttonImage: '/redmine/images/calendar.png?1404650653', showButtonPanel: true, showWeek: true, showOtherMonths: true, selectOtherMonths: true, changeMonth: true, changeYear: true, beforeShow: beforeShowDatePicker};
+//]]>
+</script><script src="/redmine/javascripts/i18n/jquery.ui.datepicker-zh-CN.js?1404650654" type="text/javascript"></script>  <script src="/redmine/javascripts/attachments.js?1404650654" type="text/javascript"></script>
+    <meta name="robots" content="noindex,follow,noarchive" />
+</head>
+<body class="project-client_record controller-issues action-new">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="/redmine/my/account" class="my-account">我的帐号</a></li>
+<li><a href="/redmine/logout" class="logout" data-method="post" rel="nofollow">退出</a></li></ul>    </div>
+    <div id="loggedas">登录为 <a href="/redmine/users/1" class="user active">admin</a></div>
+    <ul><li><a href="/redmine/" class="home">主页</a></li>
+<li><a href="/redmine/my/page" class="my-page">我的工作台</a></li>
+<li><a href="/redmine/projects" class="projects">项目</a></li>
+<li><a href="/redmine/admin" class="administration">管理</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">帮助</a></li></ul></div>
+
+<div id="header">
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="/redmine/projects/client_record/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+        <input name="issues" type="hidden" value="1" />
+        <label for='q'>
+          <a href="/redmine/projects/client_record/search" accesskey="4">搜索</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text" />
+</form>        
+    </div>
+
+    <h1>1. 客户信息记录</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="/redmine/projects/client_record" class="overview">概述</a></li>
+<li><a href="/redmine/projects/client_record/activity" class="activity">活动</a></li>
+<li><a href="/redmine/projects/client_record/issues" class="issues">问题</a></li>
+<li><a href="/redmine/projects/client_record/issues/new" accesskey="7" class="new-issue selected">新建问题</a></li>
+<li><a href="/redmine/projects/client_record/settings" class="settings">配置</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>新建问题</h2>
+
+
+
+<form accept-charset="UTF-8" action="/redmine/projects/client_record/issues" class="new_issue" enctype="multipart/form-data" id="issue-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="tNKTReXKwmSwIuO2/pPmusFIaAGddOSZ2NmQF6gowV4=" /></div>
+  
+  
+  <div class="box tabular">
+    <div id="all_attributes">
+    
+
+
+<p style="float:right; margin-right:1em;">
+  <input name="issue[is_private]" type="hidden" value="0" /><input id="issue_is_private" name="issue[is_private]" type="checkbox" value="1" /><label class="inline" for="issue_is_private" id="issue_is_private_label">私有</label>
+</p>
+
+
+<p><label for="issue_tracker_id">类别/设备<span class="required"> *</span></label><select id="issue_tracker_id" name="issue[tracker_id]" onchange="updateIssueFrom(&#x27;/redmine/projects/client_record/issues/update_form.js&#x27;)"><option value="8" selected="selected">客户清单</option></select></p>
+
+<p><label for="issue_subject">使用机构<span class="required"> *</span></label><input id="issue_subject" maxlength="255" name="issue[subject]" size="80" type="text" value="" /></p>
+
+<p>
+  <label for="issue_description">描述</label>
+  
+  <span id="issue_description_and_toolbar">
+    <textarea accesskey="e" class="wiki-edit" cols="60" id="issue_description" name="issue[description]" rows="10">
+</textarea>
+</span></p>
+<script type="text/javascript">
+//<![CDATA[
+var wikiToolbar = new jsToolBar(document.getElementById('issue_description')); wikiToolbar.setHelpLink('/redmine/help/zh/wiki_syntax.html'); wikiToolbar.draw();
+//]]>
+</script>
+
+<div id="attributes" class="attributes">
+  
+
+<div class="splitcontent">
+<div class="splitcontentleft">
+<p><label for="issue_status_id">状态<span class="required"> *</span></label><select id="issue_status_id" name="issue[status_id]" onchange="updateIssueFrom(&#x27;/redmine/projects/client_record/issues/update_form.js&#x27;)"><option value="1" selected="selected">新建</option></select></p>
+
+
+<p><label for="issue_priority_id">优先级<span class="required"> *</span></label><select id="issue_priority_id" name="issue[priority_id]"><option value="1">低</option>
+<option value="2" selected="selected">普通</option>
+<option value="3">高</option>
+<option value="4">紧急</option>
+<option value="5">立刻</option></select></p>
+
+<p><label for="issue_assigned_to_id">指派给</label><select id="issue_assigned_to_id" name="issue[assigned_to_id]"><option value="">&nbsp;</option>
+<option value="1">&lt;&lt; 我 &gt;&gt;</option><option value="1">Miraclelaser Admin</option></select></p>
+
+
+</div>
+
+<div class="splitcontentright">
+
+
+
+
+</div>
+</div>
+
+<div class="splitcontent">
+<div class="splitcontentleft">
+  <p><label for="issue_custom_field_values_33"><span>销售经理</span></label><select class="list_cf" id="issue_custom_field_values_33" name="issue[custom_field_values][33]"><option value="">&nbsp;</option><option value="郝四新">郝四新</option>
+<option value="胡圣龙">胡圣龙</option>
+<option value="潘桂锦">潘桂锦</option>
+<option value="徐志琴">徐志琴</option>
+<option value="付毅博">付毅博</option>
+<option value="余洋">余洋</option>
+<option value="郑祥">郑祥</option>
+<option value="赵波">赵波</option>
+<option value="李海">李海</option>
+<option value="杨辉">杨辉</option>
+<option value="宋佳琦">宋佳琦</option>
+<option value="周燕">周燕</option>
+<option value="胡志婷">胡志婷</option>
+<option value="杨彪">杨彪</option>
+<option value="李明斌">李明斌</option>
+<option value="董小平">董小平</option>
+<option value="潘厚清">潘厚清</option>
+<option value="郭海涛">郭海涛</option>
+<option value="李斌">李斌</option>
+<option value="陈春">陈春</option>
+<option value="郑和信">郑和信</option>
+<option value="李建泉">李建泉</option>
+<option value="周林荣">周林荣</option>
+<option value="向金能">向金能</option>
+<option value="史火林">史火林</option>
+<option value="操晶洁">操晶洁</option>
+<option value="朱彪">朱彪</option>
+<option value="刘佩佩">刘佩佩</option>
+<option value="崔岚">崔岚</option>
+<option value="聂昌林">聂昌林</option>
+<option value="胡奎">胡奎</option>
+<option value="李俊">李俊</option>
+<option value="程栋">程栋</option>
+<option value="樊东健">樊东健</option>
+<option value="罗为">罗为</option>
+<option value="储茂义">储茂义</option>
+<option value="唐承君">唐承君</option>
+<option value="谷来峰">谷来峰</option>
+<option value="杨国栋">杨国栋</option>
+<option value="周岚旭">周岚旭</option>
+<option value="张森">张森</option></select></p>
+  <p><label for="issue_custom_field_values_32"><span>所属区域</span></label><select class="list_cf" id="issue_custom_field_values_32" name="issue[custom_field_values][32]"><option value="">&nbsp;</option><option value="北区">北区</option>
+<option value="南区">南区</option>
+<option value="西区">西区</option>
+<option value="东区">东区</option>
+<option value="泌尿">泌尿</option></select></p>
+  <p><label for="issue_custom_field_values_15"><span>机构性质</span></label><select class="list_cf" id="issue_custom_field_values_15" name="issue[custom_field_values][15]"><option value="">&nbsp;</option><option value="公立">公立</option>
+<option value="私立">私立</option></select></p>
+  <p><label for="issue_custom_field_values_64"><span>客户类别</span></label><select class="list_cf" id="issue_custom_field_values_64" name="issue[custom_field_values][64]"><option value="">&nbsp;</option><option value="A类客户">A类客户</option>
+<option value="B类客户">B类客户</option>
+<option value="C类客户">C类客户</option>
+<option value="S类客户">S类客户</option></select></p>
+  <p><label for="issue_custom_field_values_11"><span>地址</span></label><input class="string_cf" id="issue_custom_field_values_11" name="issue[custom_field_values][11]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_18"><span>联系人（一）</span></label><input class="string_cf" id="issue_custom_field_values_18" name="issue[custom_field_values][18]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_19"><span>职务（一）</span></label><input class="string_cf" id="issue_custom_field_values_19" name="issue[custom_field_values][19]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_20"><span>联系方式（一）</span></label><input class="string_cf" id="issue_custom_field_values_20" name="issue[custom_field_values][20]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_37"><span>邮箱（一）</span></label><input class="string_cf" id="issue_custom_field_values_37" name="issue[custom_field_values][37]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_39"><span>备注（一）</span></label><input class="string_cf" id="issue_custom_field_values_39" name="issue[custom_field_values][39]" type="text" value="" /></p>
+</div><div class="splitcontentright">
+  <p><label for="issue_custom_field_values_21"><span>联系人（二）</span></label><input class="string_cf" id="issue_custom_field_values_21" name="issue[custom_field_values][21]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_22"><span>职务（二）</span></label><input class="string_cf" id="issue_custom_field_values_22" name="issue[custom_field_values][22]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_23"><span>联系方式（二）</span></label><input class="string_cf" id="issue_custom_field_values_23" name="issue[custom_field_values][23]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_38"><span>邮箱（二）</span></label><input class="string_cf" id="issue_custom_field_values_38" name="issue[custom_field_values][38]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_40"><span>备注（二）</span></label><input class="string_cf" id="issue_custom_field_values_40" name="issue[custom_field_values][40]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_65"><span>联系人（三）</span></label><input class="string_cf" id="issue_custom_field_values_65" name="issue[custom_field_values][65]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_66"><span>职务（三）</span></label><input class="string_cf" id="issue_custom_field_values_66" name="issue[custom_field_values][66]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_67"><span>联系方式（三）</span></label><input class="string_cf" id="issue_custom_field_values_67" name="issue[custom_field_values][67]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_68"><span>邮箱（三）</span></label><input class="string_cf" id="issue_custom_field_values_68" name="issue[custom_field_values][68]" type="text" value="" /></p>
+  <p><label for="issue_custom_field_values_69"><span>备注（三）</span></label><input class="string_cf" id="issue_custom_field_values_69" name="issue[custom_field_values][69]" type="text" value="" /></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+$(document).ready(function(){
+  $("#issue_tracker_id, #issue_status_id").each(function(){
+    $(this).val($(this).find("option[selected=selected]").val());
+  });
+});
+
+//]]>
+</script>
+    </div>
+
+
+    <p id="attachments_form"><label>文件</label><span id="attachments_fields">
+</span>
+<span class="add_attachment">
+<input class="file_selector" data-description-placeholder="可选的描述" data-max-concurrent-uploads="2" data-max-file-size-message="该文件无法上传。超过文件大小限制 (5 MB)" data-max-file-size="5242880" data-upload-path="/redmine/uploads.js" multiple="multiple" name="attachments[dummy][file]" type="file" />
+(最大尺寸: 5 MB)
+</span>
+<script type="text/javascript">
+//<![CDATA[
+
+  $('input.file_selector').on('change', function(){addInputFiles(this);});
+
+//]]>
+</script>
+</p>
+
+      <p id="watchers_form"><label>跟踪者</label>
+      <span id="watchers_inputs">
+        
+      </span>
+      <span class="search_for_watchers">
+      <a href="/redmine/watchers/new?project_id=client_record" data-method="get" data-remote="true">通过查找方式添加跟踪者</a>
+      </span>
+      </p>
+  </div>
+
+  <input name="commit" type="submit" value="创建" />
+  <input name="continue" type="submit" value="创建并继续" />
+  <a accesskey="r" href="#" onclick="submitPreview(&quot;/redmine/issues/preview/new/client_record&quot;, &quot;issue-form&quot;, &quot;preview&quot;); return false;">预览</a>
+</form>
+<div id="preview" class="wiki"></div>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>载入中...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://bitnami.com/stack/redmine">Bitnami Redmine Stack</a> &copy; 2006-2014 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -8,87 +8,233 @@ import com.sp.net.annotation.HtmlElement;
 * @email benjaminchen555@gmail.com
 */
 public class TempCustomer {
-	@HtmlElement(xpath="//input[@id='issue_subject']")
-	private String subject;
-	@HtmlElement(xpath="//select[@id='issue_status_id']")
-	private String statue;
-	@HtmlElement(xpath="//select[@id='issue_priority_id']")
-	private String priority;
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_2']")
-	private String orderDate;
-	@HtmlElement(xpath="//*[@id='issue_custom_field_values_13']")
-	private String customerType;
-	@HtmlElement(xpath="//*[@id='issue_custom_field_values_14']")
-	private String contactMan;
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_15']")
-	private String phone;
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_30']")
-	private String fax;
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_16']")
-	private String qqNemail;
-	@HtmlElement(xpath="//input[@id='issue_custom_field_values_33']")
-	private String traceDate;
-	public String getSubject() {
-		return subject;
+
+	@HtmlElement(xpath = "//*[@id='issue_subject']")
+	private String issue_subject;
+
+	@HtmlElement(xpath = "//*[@id='issue_assigned_to_id']")
+	private String issue_assigned_to_id;
+
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_33']")
+	private String issue_custom_field_values_33;
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_32']")
+	private String issue_custom_field_values_32;
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_15']")
+	private String issue_custom_field_values_15;
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_64']")
+	private String issue_custom_field_values_64;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_11']")
+	private String issue_custom_field_values_11;
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_18']")
+	private String issue_custom_field_values_18;
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_19']")
+	private String issue_custom_field_values_19;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_20']")
+	private String issue_custom_field_values_20;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_37']")
+	private String issue_custom_field_values_37;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_39']")
+	private String issue_custom_field_values_39;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_21']")
+	private String issue_custom_field_values_21;
+
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_22']")
+	private String issue_custom_field_values_22;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_23']")
+	private String issue_custom_field_values_23;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_38']")
+	private String issue_custom_field_values_38;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_40']")
+	private String issue_custom_field_values_40;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_65']")
+	private String issue_custom_field_values_65;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_66']")
+	private String issue_custom_field_values_66;
+
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_67']")
+	private String issue_custom_field_values_67;
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_68']")
+	private String issue_custom_field_values_68;
+
+	@HtmlElement(xpath = "//input[@id='issue_custom_field_values_69']")
+	private String issue_custom_field_values_69;
+
+	public String getIssue_subject() {
+		return issue_subject;
 	}
-	public void setSubject(String subject) {
-		this.subject = subject;
+
+	public void setIssue_subject(String issue_subject) {
+		this.issue_subject = issue_subject;
 	}
-	public String getStatue() {
-		return statue;
+
+	public String getIssue_assigned_to_id() {
+		return issue_assigned_to_id;
 	}
-	public void setStatue(String statue) {
-		this.statue = statue;
+
+	public void setIssue_assigned_to_id(String issue_assigned_to_id) {
+		this.issue_assigned_to_id = issue_assigned_to_id;
 	}
-	public String getPriority() {
-		return priority;
+
+	public String getIssue_custom_field_values_33() {
+		return issue_custom_field_values_33;
 	}
-	public void setPriority(String priority) {
-		this.priority = priority;
+
+	public void setIssue_custom_field_values_33(String issue_custom_field_values_33) {
+		this.issue_custom_field_values_33 = issue_custom_field_values_33;
 	}
-	public String getOrderDate() {
-		return orderDate;
+
+	public String getIssue_custom_field_values_32() {
+		return issue_custom_field_values_32;
 	}
-	public void setOrderDate(String orderDate) {
-		this.orderDate = orderDate;
+
+	public void setIssue_custom_field_values_32(String issue_custom_field_values_32) {
+		this.issue_custom_field_values_32 = issue_custom_field_values_32;
 	}
-	public String getCustomerType() {
-		return customerType;
+
+	public String getIssue_custom_field_values_15() {
+		return issue_custom_field_values_15;
 	}
-	public void setCustomerType(String customerType) {
-		this.customerType = customerType;
+
+	public void setIssue_custom_field_values_15(String issue_custom_field_values_15) {
+		this.issue_custom_field_values_15 = issue_custom_field_values_15;
 	}
-	public String getContactMan() {
-		return contactMan;
+
+	public String getIssue_custom_field_values_64() {
+		return issue_custom_field_values_64;
 	}
-	public void setContactMan(String contactMan) {
-		this.contactMan = contactMan;
+
+	public void setIssue_custom_field_values_64(String issue_custom_field_values_64) {
+		this.issue_custom_field_values_64 = issue_custom_field_values_64;
 	}
-	public String getPhone() {
-		return phone;
+
+	public String getIssue_custom_field_values_11() {
+		return issue_custom_field_values_11;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+
+	public void setIssue_custom_field_values_11(String issue_custom_field_values_11) {
+		this.issue_custom_field_values_11 = issue_custom_field_values_11;
 	}
-	public String getFax() {
-		return fax;
+
+	public String getIssue_custom_field_values_18() {
+		return issue_custom_field_values_18;
 	}
-	public void setFax(String fax) {
-		this.fax = fax;
+
+	public void setIssue_custom_field_values_18(String issue_custom_field_values_18) {
+		this.issue_custom_field_values_18 = issue_custom_field_values_18;
 	}
-	public String getQqNemail() {
-		return qqNemail;
+
+	public String getIssue_custom_field_values_19() {
+		return issue_custom_field_values_19;
 	}
-	public void setQqNemail(String qqNemail) {
-		this.qqNemail = qqNemail;
+
+	public void setIssue_custom_field_values_19(String issue_custom_field_values_19) {
+		this.issue_custom_field_values_19 = issue_custom_field_values_19;
 	}
-	public String getTraceDate() {
-		return traceDate;
+
+	public String getIssue_custom_field_values_20() {
+		return issue_custom_field_values_20;
 	}
-	public void setTraceDate(String traceDate) {
-		this.traceDate = traceDate;
+
+	public void setIssue_custom_field_values_20(String issue_custom_field_values_20) {
+		this.issue_custom_field_values_20 = issue_custom_field_values_20;
 	}
-	
+
+	public String getIssue_custom_field_values_37() {
+		return issue_custom_field_values_37;
+	}
+
+	public void setIssue_custom_field_values_37(String issue_custom_field_values_37) {
+		this.issue_custom_field_values_37 = issue_custom_field_values_37;
+	}
+
+	public String getIssue_custom_field_values_39() {
+		return issue_custom_field_values_39;
+	}
+
+	public void setIssue_custom_field_values_39(String issue_custom_field_values_39) {
+		this.issue_custom_field_values_39 = issue_custom_field_values_39;
+	}
+
+	public String getIssue_custom_field_values_21() {
+		return issue_custom_field_values_21;
+	}
+
+	public void setIssue_custom_field_values_21(String issue_custom_field_values_21) {
+		this.issue_custom_field_values_21 = issue_custom_field_values_21;
+	}
+
+	public String getIssue_custom_field_values_22() {
+		return issue_custom_field_values_22;
+	}
+
+	public void setIssue_custom_field_values_22(String issue_custom_field_values_22) {
+		this.issue_custom_field_values_22 = issue_custom_field_values_22;
+	}
+
+	public String getIssue_custom_field_values_23() {
+		return issue_custom_field_values_23;
+	}
+
+	public void setIssue_custom_field_values_23(String issue_custom_field_values_23) {
+		this.issue_custom_field_values_23 = issue_custom_field_values_23;
+	}
+
+	public String getIssue_custom_field_values_38() {
+		return issue_custom_field_values_38;
+	}
+
+	public void setIssue_custom_field_values_38(String issue_custom_field_values_38) {
+		this.issue_custom_field_values_38 = issue_custom_field_values_38;
+	}
+
+	public String getIssue_custom_field_values_40() {
+		return issue_custom_field_values_40;
+	}
+
+	public void setIssue_custom_field_values_40(String issue_custom_field_values_40) {
+		this.issue_custom_field_values_40 = issue_custom_field_values_40;
+	}
+
+	public String getIssue_custom_field_values_65() {
+		return issue_custom_field_values_65;
+	}
+
+	public void setIssue_custom_field_values_65(String issue_custom_field_values_65) {
+		this.issue_custom_field_values_65 = issue_custom_field_values_65;
+	}
+
+	public String getIssue_custom_field_values_66() {
+		return issue_custom_field_values_66;
+	}
+
+	public void setIssue_custom_field_values_66(String issue_custom_field_values_66) {
+		this.issue_custom_field_values_66 = issue_custom_field_values_66;
+	}
+
+	public String getIssue_custom_field_values_67() {
+		return issue_custom_field_values_67;
+	}
+
+	public void setIssue_custom_field_values_67(String issue_custom_field_values_67) {
+		this.issue_custom_field_values_67 = issue_custom_field_values_67;
+	}
+
+	public String getIssue_custom_field_values_68() {
+		return issue_custom_field_values_68;
+	}
+
+	public void setIssue_custom_field_values_68(String issue_custom_field_values_68) {
+		this.issue_custom_field_values_68 = issue_custom_field_values_68;
+	}
+
+	public String getIssue_custom_field_values_69() {
+		return issue_custom_field_values_69;
+	}
+
+	public void setIssue_custom_field_values_69(String issue_custom_field_values_69) {
+		this.issue_custom_field_values_69 = issue_custom_field_values_69;
+	}
+
 	
 	
 }
