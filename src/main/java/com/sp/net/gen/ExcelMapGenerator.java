@@ -3,7 +3,6 @@ package com.sp.net.gen;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
@@ -17,7 +16,6 @@ import com.sp.net.WebClient;
 */
 @Component
 public class ExcelMapGenerator {
-	@Autowired
 	private WebClient c;
 
 	public String parse2String(String url) throws FailingHttpStatusCodeException, MalformedURLException, IOException {

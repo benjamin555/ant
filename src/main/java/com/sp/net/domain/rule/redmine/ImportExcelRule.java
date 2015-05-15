@@ -44,7 +44,7 @@ public class ImportExcelRule extends Rule{
 			if (el instanceof com.gargoylesoftware.htmlunit.html.HtmlElement) {
 				com.gargoylesoftware.htmlunit.html.HtmlElement htmlElement = (com.gargoylesoftware.htmlunit.html.HtmlElement)el;
 				field.setAccessible(true);
-				String value = (String) field.get(case1);
+				String value =  field.get(case1).toString();
 			
 				
 				

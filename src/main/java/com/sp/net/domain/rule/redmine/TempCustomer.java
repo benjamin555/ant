@@ -235,6 +235,25 @@ public class TempCustomer {
 		this.issue_custom_field_values_69 = issue_custom_field_values_69;
 	}
 
+	@Override
+	public String toString() {
+		return "TempCustomer [issue_subject=" + issue_subject + ", issue_assigned_to_id=" + issue_assigned_to_id
+				+ ", issue_custom_field_values_33=" + issue_custom_field_values_33 + ", issue_custom_field_values_32="
+				+ issue_custom_field_values_32 + ", issue_custom_field_values_15=" + issue_custom_field_values_15
+				+ ", issue_custom_field_values_64=" + issue_custom_field_values_64 + ", issue_custom_field_values_11="
+				+ issue_custom_field_values_11 + ", issue_custom_field_values_18=" + issue_custom_field_values_18
+				+ ", issue_custom_field_values_19=" + issue_custom_field_values_19 + ", issue_custom_field_values_20="
+				+ issue_custom_field_values_20 + ", issue_custom_field_values_37=" + issue_custom_field_values_37
+				+ ", issue_custom_field_values_39=" + issue_custom_field_values_39 + ", issue_custom_field_values_21="
+				+ issue_custom_field_values_21 + ", issue_custom_field_values_22=" + issue_custom_field_values_22
+				+ ", issue_custom_field_values_23=" + issue_custom_field_values_23 + ", issue_custom_field_values_38="
+				+ issue_custom_field_values_38 + ", issue_custom_field_values_40=" + issue_custom_field_values_40
+				+ ", issue_custom_field_values_65=" + issue_custom_field_values_65 + ", issue_custom_field_values_66="
+				+ issue_custom_field_values_66 + ", issue_custom_field_values_67=" + issue_custom_field_values_67
+				+ ", issue_custom_field_values_68=" + issue_custom_field_values_68 + ", issue_custom_field_values_69="
+				+ issue_custom_field_values_69 + "]";
+	}
+
 	
 	
 }

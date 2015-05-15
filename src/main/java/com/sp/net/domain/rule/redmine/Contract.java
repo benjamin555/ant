@@ -90,6 +90,8 @@ public class Contract {
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_52']")
 	private String issue_custom_field_values_52;
 
+
+
 	public String getIssue_tracker_id() {
 		return issue_tracker_id;
 	}
