@@ -15,13 +15,18 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
 		<property name="ignoreResourceNotFound" value="true" />
-		<property name="locations">
-			<list>
-				<!-- 标准配置 -->
-				<value>classpath*:/application.properties</value>
-			</list>
-		</property>
+		 <property name="properties" ref="configProperties" />
 	</bean>
+	
+	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath*:application.properties</value>
+            </list>
+        </property>
+    </bean>
+	
+	
 	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
 	<context:component-scan base-package="com.sp.net" />
 	<bean id="ComponentFactory" class="com.sp.net.utils.ComponentFactory" />

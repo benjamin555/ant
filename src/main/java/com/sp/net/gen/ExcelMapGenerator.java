@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -38,8 +39,8 @@ public class ExcelMapGenerator {
 	private XLSExport export;
 	@Autowired
 	private TextExport textExport;
-	
-	private String outputPath = "d:/temp/";
+	@Value("#{configProperties['outputPath']}")
+	private String outputPath ;
 
 	public String parse2Config(String url, String clazz) throws FailingHttpStatusCodeException,
 			MalformedURLException, IOException {
