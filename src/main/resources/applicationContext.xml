@@ -27,5 +27,17 @@
 	<bean id="ComponentFactory" class="com.sp.net.utils.ComponentFactory" />
 
 
+	<bean id="freeMarkerConfigurer"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="classpath:templates"></property>
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">1800</prop>
+				<prop key="default_encoding">utf-8</prop>
+				<prop key="locale">zh_CN</prop>
+			</props>
+		</property>
+	</bean>
+
 	
 </beans>

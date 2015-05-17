@@ -24,7 +24,7 @@ public class Form {
 	 */
 	private String url;
 	
-	
+	private String formName;
 	
 	private Map<String, Object> formValueMap;
 	
@@ -110,6 +110,14 @@ public class Form {
 				r.setForm(this);
 			}
 		}
+	}
+
+	public String getFormName() {
+		return formName;
+	}
+
+	public void setFormName(String formName) {
+		this.formName = formName;
 	}
 	
 
