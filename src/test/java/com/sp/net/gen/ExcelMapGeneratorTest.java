@@ -49,9 +49,11 @@ public class ExcelMapGeneratorTest {
 	@Test
 	public void testGenAll() throws Exception {
 //		setUrl("file:/G:/zhouxi/表单/表单/培训记录/新建问题 - 3. 设备培训记录 - Redmine.html");
-		setUrl("file:/G:/zhouxi/模板对应表/设备销售记录/新建问题 - 2. 设备销售记录 - Redmine.html");
-		
-		String en="Record";
+//		setUrl("file:/G:/zhouxi/模板对应表/设备销售记录/新建问题 - 2. 设备销售记录 - Redmine.html");
+//		setUrl("file:/G:/zhouxi/模板对应表/客户信息记录/新建问题 - 1. 客户信息记录 - Redmine.html");
+		setUrl("file:/G:/zhouxi/表单/表单/售后问题记录/新建问题 - 4. 客户售后问题记录 - Redmine.html");
+
+		String en="Service";
 		String pkg = "com.sp.net.domain.rule.redmine";
 		
 		
