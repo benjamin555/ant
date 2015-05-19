@@ -23,6 +23,16 @@ public class Customer {
 	public void setIssue_subject(String issue_subject) {
 		this.issue_subject = issue_subject;
 	}
+	@HtmlElement(xpath = "//*[@id='issue_description']")
+	private String issue_description;
+	
+	public String getIssue_description() {
+		return issue_description;
+	}
+
+	public void setIssue_description(String issue_description) {
+		this.issue_description = issue_description;
+	}
 	@HtmlElement(xpath = "//*[@id='issue_status_id']")
 	private String issue_status_id;
 	

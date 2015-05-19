@@ -23,6 +23,16 @@ public class Train {
 	public void setIssue_subject(String issue_subject) {
 		this.issue_subject = issue_subject;
 	}
+	@HtmlElement(xpath = "//*[@id='issue_description']")
+	private String issue_description;
+	
+	public String getIssue_description() {
+		return issue_description;
+	}
+
+	public void setIssue_description(String issue_description) {
+		this.issue_description = issue_description;
+	}
 	@HtmlElement(xpath = "//*[@id='issue_status_id']")
 	private String issue_status_id;
 	
@@ -82,6 +92,16 @@ public class Train {
 
 	public void setIssue_custom_field_values_48(String issue_custom_field_values_48) {
 		this.issue_custom_field_values_48 = issue_custom_field_values_48;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_43']")
+	private String issue_custom_field_values_43;
+	
+	public String getIssue_custom_field_values_43() {
+		return issue_custom_field_values_43;
+	}
+
+	public void setIssue_custom_field_values_43(String issue_custom_field_values_43) {
+		this.issue_custom_field_values_43 = issue_custom_field_values_43;
 	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_11']")
 	private String issue_custom_field_values_11;
@@ -252,6 +272,26 @@ public class Train {
 
 	public void setIssue_custom_field_values_71(String issue_custom_field_values_71) {
 		this.issue_custom_field_values_71 = issue_custom_field_values_71;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_54']")
+	private String issue_custom_field_values_54;
+	
+	public String getIssue_custom_field_values_54() {
+		return issue_custom_field_values_54;
+	}
+
+	public void setIssue_custom_field_values_54(String issue_custom_field_values_54) {
+		this.issue_custom_field_values_54 = issue_custom_field_values_54;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_52']")
+	private String issue_custom_field_values_52;
+	
+	public String getIssue_custom_field_values_52() {
+		return issue_custom_field_values_52;
+	}
+
+	public void setIssue_custom_field_values_52(String issue_custom_field_values_52) {
+		this.issue_custom_field_values_52 = issue_custom_field_values_52;
 	}
 
 	

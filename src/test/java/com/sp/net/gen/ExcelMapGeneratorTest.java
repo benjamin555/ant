@@ -1,5 +1,9 @@
 package com.sp.net.gen;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -49,20 +53,33 @@ public class ExcelMapGeneratorTest {
 	@Test
 	public void testGenAll() throws Exception {
 //		setUrl("file:/G:/zhouxi/表单/表单/培训记录/新建问题 - 3. 设备培训记录 - Redmine.html");
+//		String en="Train";
 //		setUrl("file:/G:/zhouxi/模板对应表/设备销售记录/新建问题 - 2. 设备销售记录 - Redmine.html");
+//		String en="Record";
 //		setUrl("file:/G:/zhouxi/模板对应表/客户信息记录/新建问题 - 1. 客户信息记录 - Redmine.html");
-		setUrl("file:/G:/zhouxi/表单/表单/售后问题记录/新建问题 - 4. 客户售后问题记录 - Redmine.html");
-
-		String en="Service";
-		String pkg = "com.sp.net.domain.rule.redmine";
+//		String en="Customer";
+//		setUrl("file:/G:/zhouxi/表单/表单/售后问题记录/新建问题 - 4. 客户售后问题记录 - Redmine.html");
+//		String en="Service";
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("Train", "file:/G:/zhouxi/表单/表单/培训记录/新建问题 - 3. 设备培训记录 - Redmine.html");
+		map.put("Record", "file:/G:/zhouxi/模板对应表/设备销售记录/新建问题 - 2. 设备销售记录 - Redmine.html");
+		map.put("Customer", "file:/G:/zhouxi/模板对应表/客户信息记录/新建问题 - 1. 客户信息记录 - Redmine.html");
+		map.put("Service", "file:/G:/zhouxi/表单/表单/售后问题记录/新建问题 - 4. 客户售后问题记录 - Redmine.html");
+		
+		Set<String> ks = map.keySet();
+		for (String k : ks) {
+			setUrl(map.get(k));
+			String en=k;
+			String pkg = "com.sp.net.domain.rule.redmine";
+			String className=en;
+			g.genExcel(getUrl(),"new"+en);
+			g.genXml(getUrl(),pkg+"."+className,"new"+en);
+			g.setPkg(pkg);
+			g.genJava(getUrl(),className);
+		}
 		
 		
-		String className=en;
-		
-		g.genExcel(getUrl(),"new"+en);
-		g.genXml(getUrl(),pkg+"."+className,"new"+en);
-		g.setPkg(pkg);
-		g.genJava(getUrl(),className);
 	}
 
 	public void setUrl(String url) {

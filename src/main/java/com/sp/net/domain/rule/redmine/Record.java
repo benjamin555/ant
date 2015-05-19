@@ -1,5 +1,4 @@
 package com.sp.net.domain.rule.redmine;
-
 import com.sp.net.annotation.HtmlElement;
 
 public class Record {
@@ -23,6 +22,16 @@ public class Record {
 
 	public void setIssue_subject(String issue_subject) {
 		this.issue_subject = issue_subject;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_description']")
+	private String issue_description;
+	
+	public String getIssue_description() {
+		return issue_description;
+	}
+
+	public void setIssue_description(String issue_description) {
+		this.issue_description = issue_description;
 	}
 	@HtmlElement(xpath = "//*[@id='issue_status_id']")
 	private String issue_status_id;
@@ -143,6 +152,16 @@ public class Record {
 
 	public void setIssue_custom_field_values_32(String issue_custom_field_values_32) {
 		this.issue_custom_field_values_32 = issue_custom_field_values_32;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_61']")
+	private String issue_custom_field_values_61;
+	
+	public String getIssue_custom_field_values_61() {
+		return issue_custom_field_values_61;
+	}
+
+	public void setIssue_custom_field_values_61(String issue_custom_field_values_61) {
+		this.issue_custom_field_values_61 = issue_custom_field_values_61;
 	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_16']")
 	private String issue_custom_field_values_16;
@@ -283,6 +302,16 @@ public class Record {
 
 	public void setIssue_custom_field_values_58(String issue_custom_field_values_58) {
 		this.issue_custom_field_values_58 = issue_custom_field_values_58;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_52']")
+	private String issue_custom_field_values_52;
+	
+	public String getIssue_custom_field_values_52() {
+		return issue_custom_field_values_52;
+	}
+
+	public void setIssue_custom_field_values_52(String issue_custom_field_values_52) {
+		this.issue_custom_field_values_52 = issue_custom_field_values_52;
 	}
 
 	

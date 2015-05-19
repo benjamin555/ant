@@ -9,6 +9,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -29,6 +31,7 @@ import com.sp.net.WebClient;
 @Component
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class ExcelMapGenerator {
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	private String pkg;
 	
 	@Resource(name = "webClient")
@@ -86,7 +89,7 @@ public class ExcelMapGenerator {
 		HtmlPage page = c.getPage(url);
 		HtmlForm form = (HtmlForm) page.getByXPath("//*[@id='issue-form']").get(0);
 		List<HtmlElement> ls = (List<HtmlElement>) form
-				.getByXPath("descendant::select|descendant::input[@type='text']");
+				.getByXPath("descendant::select|descendant::input[@type='text']|descendant::textarea");
 		return ls;
 	}
 
@@ -97,7 +100,14 @@ public class ExcelMapGenerator {
 		int i = 0;
 		for (HtmlElement ele : ls) {
 			String id = ele.getAttribute("id");
-			HtmlLabel l = ele.getParentNode().getFirstByXPath("label[@for='" + id + "']");
+			HtmlLabel l = null;
+			if (id.equals("issue_description")) {
+				 l = ele.getParentNode().getParentNode().getFirstByXPath("label[@for='" + id + "']");
+			}else {
+				 l = ele.getParentNode().getFirstByXPath("label[@for='" + id + "']");
+			}
+			
+			logger.info("id:{}",id);
 			export.setCell(i, l.getTextContent());
 			i++;
 		}

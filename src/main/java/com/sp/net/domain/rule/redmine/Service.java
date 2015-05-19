@@ -23,6 +23,16 @@ public class Service {
 	public void setIssue_subject(String issue_subject) {
 		this.issue_subject = issue_subject;
 	}
+	@HtmlElement(xpath = "//*[@id='issue_description']")
+	private String issue_description;
+	
+	public String getIssue_description() {
+		return issue_description;
+	}
+
+	public void setIssue_description(String issue_description) {
+		this.issue_description = issue_description;
+	}
 	@HtmlElement(xpath = "//*[@id='issue_status_id']")
 	private String issue_status_id;
 	
@@ -173,6 +183,16 @@ public class Service {
 	public void setIssue_custom_field_values_28(String issue_custom_field_values_28) {
 		this.issue_custom_field_values_28 = issue_custom_field_values_28;
 	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_55']")
+	private String issue_custom_field_values_55;
+	
+	public String getIssue_custom_field_values_55() {
+		return issue_custom_field_values_55;
+	}
+
+	public void setIssue_custom_field_values_55(String issue_custom_field_values_55) {
+		this.issue_custom_field_values_55 = issue_custom_field_values_55;
+	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_47']")
 	private String issue_custom_field_values_47;
 	
@@ -203,6 +223,16 @@ public class Service {
 	public void setIssue_custom_field_values_49(String issue_custom_field_values_49) {
 		this.issue_custom_field_values_49 = issue_custom_field_values_49;
 	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_50']")
+	private String issue_custom_field_values_50;
+	
+	public String getIssue_custom_field_values_50() {
+		return issue_custom_field_values_50;
+	}
+
+	public void setIssue_custom_field_values_50(String issue_custom_field_values_50) {
+		this.issue_custom_field_values_50 = issue_custom_field_values_50;
+	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_30']")
 	private String issue_custom_field_values_30;
 	
@@ -222,6 +252,26 @@ public class Service {
 
 	public void setIssue_custom_field_values_71(String issue_custom_field_values_71) {
 		this.issue_custom_field_values_71 = issue_custom_field_values_71;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_54']")
+	private String issue_custom_field_values_54;
+	
+	public String getIssue_custom_field_values_54() {
+		return issue_custom_field_values_54;
+	}
+
+	public void setIssue_custom_field_values_54(String issue_custom_field_values_54) {
+		this.issue_custom_field_values_54 = issue_custom_field_values_54;
+	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_52']")
+	private String issue_custom_field_values_52;
+	
+	public String getIssue_custom_field_values_52() {
+		return issue_custom_field_values_52;
+	}
+
+	public void setIssue_custom_field_values_52(String issue_custom_field_values_52) {
+		this.issue_custom_field_values_52 = issue_custom_field_values_52;
 	}
 
 	

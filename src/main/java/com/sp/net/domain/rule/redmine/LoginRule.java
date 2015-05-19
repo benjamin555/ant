@@ -18,7 +18,6 @@ import com.sp.net.domain.Rule;
 @SuppressWarnings("unchecked")
 public class LoginRule extends Rule{
 
-	
 	@Override
 	protected void fillData(Form form) throws Exception {
 		String userName = (String) form.getFormValueMap().get("userName");
@@ -46,10 +45,17 @@ public class LoginRule extends Rule{
 		HtmlPage main = (HtmlPage) b.click();
 		getLogger().info(main.asText());
 		
+		if(main.asText().indexOf("我的工作台 ")>=0){
+			setResult(true);
+		}else {
+			setResult(false);
+		}
+		
 	}
 
 	protected HtmlForm getLoginForm(HtmlPage currentPage) {
 		return ((List<HtmlForm>) currentPage.getByXPath("//div[@id='login-form']/form")).get(0);
 	}
 
+	
 }

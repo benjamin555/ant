@@ -44,10 +44,8 @@ public class ImportExcelRule extends Rule{
 			if (el instanceof com.gargoylesoftware.htmlunit.html.HtmlElement) {
 				com.gargoylesoftware.htmlunit.html.HtmlElement htmlElement = (com.gargoylesoftware.htmlunit.html.HtmlElement)el;
 				field.setAccessible(true);
-				String value =  field.get(case1).toString();
-			
-				
-				
+				Object fieldValue = field.get(case1);
+				String value =  fieldValue==null?"":fieldValue.toString();
 				
 				if (StringUtils.isNoneBlank(value)) {
 					getLogger().info("value:{}",value);

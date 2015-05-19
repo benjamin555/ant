@@ -36,6 +36,9 @@ public abstract class Rule {
 	 * 间隔，单位为秒
 	 */
 	private int interval;
+	
+	private boolean result;
+
 
 	/**
 	 * 异步执行下述操作
@@ -167,6 +170,13 @@ public abstract class Rule {
 		this.logger = logger;
 	}
 	
+	public boolean isResult() {
+		return result;
+	}
+
+	public void setResult(boolean result) {
+		this.result = result;
+	}
 	
 
 }

@@ -67,7 +67,7 @@ public class WebClient {
 		this.password = password;
 	}
 
-	public void doLogin() throws Exception {
+	public boolean doLogin() throws Exception {
 //				site.turn2LoginPage();
 		Form loginForm = site.getLoginForm();
 		Rule rule = loginForm.getRules().get(0);
@@ -77,6 +77,7 @@ public class WebClient {
 		formValueMap.put("vcode", vcode);
 		loginForm.setFormValueMap(formValueMap);
 		loginForm.perform(rule);
+		return rule.isResult();
 		//		HtmlPage page;
 		//		page = webClient.getPage(url);
 		//

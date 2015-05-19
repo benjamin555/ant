@@ -54,14 +54,21 @@ public class Site {
 		this.forms = forms;
 	}
 
-	public void login(String userName, String password) throws Exception {
+	public boolean login(String userName, String password) throws Exception {
 		logger.info("userName:{}",userName);
 		logger.info("currentLoginUser:{}",currentLoginUser);
-		if (!userName.equals(currentLoginUser)) {
+		if (StringUtils.isNoneBlank(userName)) {
+			if(userName.equals(currentLoginUser)){
+				return true;
+			}
 			webClient.setLoginInfo(this, userName, password);
-			webClient.doLogin();
-			currentLoginUser = userName;
+			boolean b =webClient.doLogin();
+			if (b) {
+				currentLoginUser = userName;
+			}
+			return b;
 		}
+		return false;
 	}
 
 	public Form findForm(final String formKey) throws Exception  {
