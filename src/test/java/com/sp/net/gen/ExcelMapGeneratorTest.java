@@ -62,10 +62,10 @@ public class ExcelMapGeneratorTest {
 //		String en="Service";
 		
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("Train", "file:/G:/zhouxi/表单/表单/培训记录/新建问题 - 3. 设备培训记录 - Redmine.html");
-		map.put("Record", "file:/G:/zhouxi/模板对应表/设备销售记录/新建问题 - 2. 设备销售记录 - Redmine.html");
-		map.put("Customer", "file:/G:/zhouxi/模板对应表/客户信息记录/新建问题 - 1. 客户信息记录 - Redmine.html");
-		map.put("Service", "file:/G:/zhouxi/表单/表单/售后问题记录/新建问题 - 4. 客户售后问题记录 - Redmine.html");
+//		map.put("Train", "file:/G:/zhouxi/表单/表单/培训记录/新建问题 - 3. 设备培训记录 - Redmine.html");
+		map.put("Record", "file:/G:/zhouxi/周希/新建问题 - 2_ 设备销售记录 - Redmine.htm");
+//		map.put("Customer", "file:/G:/zhouxi/模板对应表/客户信息记录/新建问题 - 1. 客户信息记录 - Redmine.html");
+//		map.put("Service", "file:/G:/zhouxi/表单/表单/售后问题记录/新建问题 - 4. 客户售后问题记录 - Redmine.html");
 		
 		Set<String> ks = map.keySet();
 		for (String k : ks) {

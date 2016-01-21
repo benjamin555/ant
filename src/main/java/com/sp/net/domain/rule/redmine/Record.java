@@ -63,6 +63,16 @@ public class Record {
 	public void setIssue_assigned_to_id(String issue_assigned_to_id) {
 		this.issue_assigned_to_id = issue_assigned_to_id;
 	}
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_5']")
+	private String issue_custom_field_values_5;
+	
+	public String getIssue_custom_field_values_5() {
+		return issue_custom_field_values_5;
+	}
+
+	public void setIssue_custom_field_values_5(String issue_custom_field_values_5) {
+		this.issue_custom_field_values_5 = issue_custom_field_values_5;
+	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_4']")
 	private String issue_custom_field_values_4;
 	
@@ -73,15 +83,15 @@ public class Record {
 	public void setIssue_custom_field_values_4(String issue_custom_field_values_4) {
 		this.issue_custom_field_values_4 = issue_custom_field_values_4;
 	}
-	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_5']")
-	private String issue_custom_field_values_5;
+	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_56']")
+	private String issue_custom_field_values_56;
 	
-	public String getIssue_custom_field_values_5() {
-		return issue_custom_field_values_5;
+	public String getIssue_custom_field_values_56() {
+		return issue_custom_field_values_56;
 	}
 
-	public void setIssue_custom_field_values_5(String issue_custom_field_values_5) {
-		this.issue_custom_field_values_5 = issue_custom_field_values_5;
+	public void setIssue_custom_field_values_56(String issue_custom_field_values_56) {
+		this.issue_custom_field_values_56 = issue_custom_field_values_56;
 	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_1']")
 	private String issue_custom_field_values_1;
@@ -102,16 +112,6 @@ public class Record {
 
 	public void setIssue_custom_field_values_6(String issue_custom_field_values_6) {
 		this.issue_custom_field_values_6 = issue_custom_field_values_6;
-	}
-	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_56']")
-	private String issue_custom_field_values_56;
-	
-	public String getIssue_custom_field_values_56() {
-		return issue_custom_field_values_56;
-	}
-
-	public void setIssue_custom_field_values_56(String issue_custom_field_values_56) {
-		this.issue_custom_field_values_56 = issue_custom_field_values_56;
 	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_35']")
 	private String issue_custom_field_values_35;
@@ -172,16 +172,6 @@ public class Record {
 
 	public void setIssue_custom_field_values_16(String issue_custom_field_values_16) {
 		this.issue_custom_field_values_16 = issue_custom_field_values_16;
-	}
-	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_15']")
-	private String issue_custom_field_values_15;
-	
-	public String getIssue_custom_field_values_15() {
-		return issue_custom_field_values_15;
-	}
-
-	public void setIssue_custom_field_values_15(String issue_custom_field_values_15) {
-		this.issue_custom_field_values_15 = issue_custom_field_values_15;
 	}
 	@HtmlElement(xpath = "//*[@id='issue_custom_field_values_14']")
 	private String issue_custom_field_values_14;
