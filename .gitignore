@@ -2,3 +2,5 @@
 /logs
 /lib
 /target
+/.idea
+/*.iml
